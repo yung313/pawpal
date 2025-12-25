@@ -1,0 +1,70 @@
+#news {
+    width: 50vw;
+    display: flex;
+    text-align: start;
+    justify-content: center;
+    align-items: flex-start;
+    margin-left: auto;
+    margin-right: auto;
+    gap: 50px;
+
+    & .title {
+        text-align: start;
+    }
+
+    & li {
+        border-bottom: 0.75px solid #ababab;
+        height: 40px;
+        width: 50vw;
+        margin-top: 50px;
+        margin-bottom: 50px;
+
+        & a {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding-bottom: 10px;
+            transition: 0.25s;
+
+            & h5 {
+                font-weight: 400;
+                letter-spacing: 1px;
+                display: inline-block;
+                margin-right: 50px;
+            }
+
+            & h3 {
+                width: 50vw;
+                margin-right: 50px;
+                font-weight: 500;
+                font-size: var(--font-sm);
+                letter-spacing: 1px;
+
+                & span {
+                    margin-left: 8px;
+                    font-weight: 400;
+                    letter-spacing: 0px;
+                }
+            }
+
+            & .go {
+                cursor: pointer;
+                background-color: transparent;
+                border: none;
+                opacity: 0;
+                transition: 0.25s;
+            }
+
+            &:hover {
+                color: var(--secondary-2);
+                padding-left: 20px;
+            }
+
+            &:hover .go{
+                opacity: 1;
+            }
+        }
+    }
+
+
+}

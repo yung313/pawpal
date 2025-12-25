@@ -1,0 +1,105 @@
+#pettips-content {
+    width: 50vw;
+    display: flex;
+    text-align: start;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.carousel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 55vw;
+    margin-left: auto;
+    margin-right: auto;
+
+    & #prev{
+        margin-right: 50px;
+    }
+
+    & #next{
+        margin-left: 50px;
+    }
+
+    & .slider {
+        width: 60vw;
+        overflow: hidden;
+
+        & .slider-track {
+            width: 100%;
+            display: grid;
+            grid-auto-flow: column;
+            grid-auto-columns: calc((100% - 100px) / 3);
+            gap: 50px;
+            transition: 0.2s;
+
+            & .single-card {
+                height: 33vh;
+                margin-bottom: 50px;
+                transition: 0.25s;
+
+                & .img-border {
+                    border-radius: 30px;
+                    overflow: clip;
+                    margin-bottom: 15px;
+                }
+
+                & .content {
+
+                    & .type {
+                        color: var(--secondary-3);
+                        background-color: var(--secondary-2);
+                        border-radius: 99px;
+                        padding: 5px 15px;
+                        margin-right: 2px;
+
+                    }
+
+                    & .date {
+                        color: var(--grey);
+                        letter-spacing: 1px;
+                        font-size: var(--font-xs);
+                        font-weight: 200;
+                    }
+
+                    & h3 {
+                        margin-top: 10px;
+                        font-size: var(--font-md);
+                        font-weight: 500;
+                    }
+
+                    & p {
+                        font-size: var(--font-xs);
+                        color: var(--charcoal);
+                        font-weight: 300;
+                    }
+
+                }
+
+                &:hover {
+                    border-radius: var(--radius-card);
+                    padding: 20px;
+                    box-shadow: 2px 2px 5px rgba(133, 133, 133, 0.5),
+                        inset -1px -1px 1px rgba(255, 255, 255, .8);
+                }
+
+
+            }
+
+
+        }
+    }
+}
+
+
+.mx-auto {
+    margin: 0 auto;
+}
+
+.mt-50 {
+    margin-top: 50px;
+}

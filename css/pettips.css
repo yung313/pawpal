@@ -1,0 +1,125 @@
+#pettips {
+    position: relative;
+
+    & .title {
+        width: 50vw;
+        display: flex;
+        text-align: start;
+    }
+
+    & .hashtag-list {
+        display: flex;
+
+        & .hashtag {
+            color: var(--secondary-2);
+            border: 1px var(--secondary-2) solid;
+            border-radius: 99px;
+
+            padding: 5px 20px;
+            margin: 50px 10px 20px 0px;
+            background-color: #a7e8bd26;
+            transition: 0.25s;
+
+            & li {
+                font-weight: 200;
+            }
+
+            &:hover {
+                cursor: pointer;
+                color: var(--light);
+                background-color: var(--secondary-2);
+            }
+
+        }
+    }
+
+    & .search {
+        display: flex;
+
+        & input {
+            padding: 10px 20px;
+            border: 1.5px var(--grey) solid;
+            border-radius: var(--radius-full);
+            height: 40px;
+            width: 50%;
+
+            &:focus {
+                outline:transparent;
+            }
+
+            &::placeholder {
+                color: var(--grey);
+            }
+        }
+
+        & img {
+            margin-top: -5px;
+            transition: 0.25s;
+        }
+    }
+
+    /* 列表區 */
+    & .container {
+        width: 50vw;
+
+        & .card-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 50px;
+
+            & .single-card {
+                height: 34vh;
+                transition: 0.25s;
+
+                & .img-border {
+                    border-radius: 30px;
+                    overflow: clip;
+                    margin-bottom: 15px;
+                }
+
+                & .content {
+
+                    & .type {
+                        color: var(--secondary-3);
+                        background-color: var(--secondary-2);
+                        border-radius: 99px;
+                        padding: 5px 15px;
+                        margin-right: 2px;
+
+                    }
+
+                    & .date {
+                        color: var(--grey);
+                        letter-spacing: 1px;
+                        font-size: var(--font-xs);
+                        font-weight: 200;
+                    }
+
+                    & h3 {
+                        margin-top: 10px;
+                        font-size: var(--font-md);
+                        font-weight: 500;
+                    }
+
+                    & p {
+                        font-size: var(--font-xs);
+                        color: var(--charcoal);
+                        font-weight: 300;
+                    }
+
+                }
+
+                &:hover {
+                    border-radius: var(--radius-card);
+                    padding: 20px;
+                    box-shadow: 2px 2px 5px rgba(133, 133, 133, 0.5),
+                        inset -1px -1px 1px rgba(255, 255, 255, .8);
+                }
+
+
+            }
+
+
+        }
+    }
+}

@@ -1,0 +1,30 @@
+
+:root {
+    /* 灰階色 */
+    --charcoal: #686868;
+    --dark: #414141;
+    --grey: #c3c2c2;
+    --light: #ffffff;
+
+    /* 背景色 */
+    --bg-1: #FFF8F0;
+    --bg-2: #FFD249;
+    --bg-3: #5DB985;
+
+    /* 輔助色 */
+    --secondary-1: #FF9150;
+    --secondary-2: #60BE89;
+    --secondary-3: #e5ffec;
+
+    /* 圓角 */
+    --radius-full: 99px;
+    --radius-card: 20px;
+
+    /* 字級 */
+    --font-xxl: 5rem;
+    --font-xl: 4rem;
+    --font-lg: 1.4rem;
+    --font-md: 1.2rem;
+    --font-sm: 1rem;
+    --font-xs: .8rem;
+}

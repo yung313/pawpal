@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>聯絡我們-Pawpal。寵物，食品</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/contact.css">
+    <script></script>
+</head>
+
+<body> <!-- 顯示給瀏覽者看到的內容 -->
+    <!-- 頁首區 -->
+    <header id="navbar">
+        <!-- logo -->
+        <div class="logo">
+            <a href="./index.html"><img src="./image/logo.svg" alt=""></a>
+        </div>
+        <!-- 導覽列 -->
+        <nav class="navigation">
+            <!-- 主選單 -->
+            <ul class="menu">
+                <li><a href="./news.html">
+                        <h2>最新消息</h2>
+                        <h3>news</h3>
+                    </a>
+                </li>
+                <li><a href="./product.html">
+                        <h2>商品專區</h2>
+                        <h3>product</h3>
+                    </a></li>
+                <li><a href="./pettips.html">
+                        <h2>汪喵知識庫</h2>
+                        <h3>pet tips</h3>
+                    </a></li>
+                <li><a href="./contact.html">
+                        <h2>聯絡我們</h2>
+                        <h3>contact us</h3>
+                    </a></li>
+                <li class="account"><a href="#account">
+                        <h2>會員登入</h2>
+                        <h3>account</h3>
+                    </a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- 主要內容區 -->
+    <main>
+        <!-- 聯絡我們區 -->
+        <section id="contact">
+            <!-- 區塊標題 -->
+            <header class="title">
+                <div>
+                    <h2 class="slide-up">Contact Us</h2>
+                </div>
+                <div>
+                    <h3 class="slide-up">聯絡我們</h3>
+                </div>
+                <span class="deco-right"><img src="./image/obj-orangecat.png" alt=""></span>
+                <span class="deco-left"><img src="./image/obj-yellowdog.png" alt=""></span>
+            </header>
+            <!-- 內容區 -->
+            <div class="content">
+                <form class="form_area" id="form" action="entry.php" method="post">
+                    <div class="form">
+                        <div class="box">
+                            <div class="form_tit req"><label for="name">姓名</label></div>
+                            <div class="form_input">
+                                <input name="name" id="name" type="text" class="form-item" placeholder="例）王小明"
+                                    required="">
+                            </div>
+                        </div>
+                        <div class="box">
+                            <div class="form_tit"><label for="tel">電話號碼</label></div>
+                            <div class="form_input">
+                                <input name="tel" id="tel" type="tel" class="form-item" placeholder="例）0910-40-8547">
+                            </div>
+                        </div>
+
+                        <div class="box">
+                            <div class="form_tit"><label for="address">住家地址</label></div>
+                            <div class="form_input">
+                                <input name="address" id="address" type="text" class="form-item"
+                                    placeholder="例）新北市板橋區中山路一段161號">
+                            </div>
+                        </div>
+                        <div class="box">
+                            <div class="form_tit req"><label for="mail">電子信箱</label></div>
+                            <div class="form_input">
+                                <input name="mail" id="mail" type="email" class="form-item"
+                                    placeholder="例）kase@info.com" required="">
+                            </div>
+                        </div>
+
+                        <div class="b_box">
+                            <div class="form_tit req"><label for="message">留言區</label></div>
+                            <div class="form_input b-item">
+                                <textarea name="message" id="message" type="text" class="form-item"
+                                    placeholder="例）有任何需要協助或諮詢的地方，請在此填寫需求" required=""></textarea>
+                            </div>
+                        </div>
+
+                        <p class="link_btn" id="submit_wrap">
+                            <span>送出</span>
+                            <input type="submit" class="submit-btn" id="submit-btn" value="">
+                        </p>
+                    </div>
+        </section>
+    </main>
+
+
+    <!-- 頁尾區 -->
+    <footer>
+        <div class="pet-friends">
+            <img src="./image/pet-friends.svg" alt="">
+        </div>
+
+        <!-- 公司logo -->
+        <figure>
+            <img src="./image/logo-footer.svg" alt="" srcset="">
+        </figure>
+        <!-- 網站地圖 -->
+        <nav class="footer-navigation">
+            <!-- 主選單 -->
+            <div class="information">
+                <ul class="menu-1">
+                    <li>
+                        <h2>電話</h2>
+                        <h3>0957-151-780</h3>
+                    </li>
+                    <li>
+                        <h2>公司地址</h2>
+                        <h3>台北市大安區仁愛路五段288巷16巷5號10樓</h3>
+                    </li>
+                </ul>
+                <ul class="wrapper">
+                    <li class="icon facebook">
+                        <span class="tooltip">Facebook</span>
+                        <span><img src="./image/icon-fb.svg" alt=""></span>
+                    </li>
+                    <li class="icon instagram">
+                        <span class="tooltip">Instagram</span>
+                        <span><img src="./image/icon-ig.svg" alt=""></span>
+                    </li>
+                    <li class="icon mail">
+                        <span class="tooltip">Mail</span>
+                        <span><img src="./image/icon-mail.svg" alt=""></span>
+                    </li>
+                </ul>
+            </div>
+            <ul class="menu-2">
+                <li><a href="./news.html">
+                        <h2>最新消息</h2>
+                        <h3>news</h3>
+                    </a>
+                </li>
+                <li><a href="./product.html">
+                        <h2>商品專區</h2>
+                        <h3>product</h3>
+                    </a></li>
+                <li><a href="./pettips.html">
+                        <h2>汪喵知識庫</h2>
+                        <h3>pet tips</h3>
+                    </a></li>
+                <li><a href="./contact.html">
+                        <h2>聯絡我們</h2>
+                        <h3>contact us</h3>
+                    </a></li>
+                <li class="account"><a href="#account">
+                        <h2>會員登入</h2>
+                        <h3>account</h3>
+                    </a></li>
+            </ul>
+        </nav>
+
+        <small>Copyright &copy; Pawpal 2025.</small>
+
+    </footer>
+
+    <!-- jquery 原生碼 cdn -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+    <!-- jquery smoove cdn -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-smoove/0.2.10/jquery.smoove.min.js"></script>
+
+    <!-- 自訂的js一定要放最下面，因為要最後執行 -->
+    <script src="./js/script.js"></script>
+
+</body>
+
+</html>
