@@ -10,6 +10,11 @@ body {
     display: block;
     width: 100vw;
     overflow-x: hidden;
+    background-color: #fff5e8;
+}
+
+main {
+    top: 0px;
 }
 
 #navbar {
