@@ -100,7 +100,7 @@ body {
         /*英文*/
         -apple-system, BlinkMacSystemFont, "Quicksand", "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Helvetica, Arial,
         /*中文*/
-        "Chiron GoRound TC", "蘋方-繁", "PingFang TC", "黑體-繁", "Heiti TC", "微軟正黑體", "Microsoft JhengHei", "Noto Sans TC", sans-serif;
+        "Chiron GoRound TC", "Noto Sans TC", "蘋方-繁", "PingFang TC", "黑體-繁", "Heiti TC", "微軟正黑體", "Microsoft JhengHei", sans-serif;
     line-height: 1.5;
 }
 
@@ -137,4 +137,5 @@ a {
     display: block;
     color: var(--dark);
     text-decoration: none;
+
 }
