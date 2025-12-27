@@ -1,0 +1,1135 @@
+@charset "UTF-8";
+/* 編碼一定要在第一行 */
+@import url(./reset.css);
+@import url(./var.css);
+@import url('https://fonts.googleapis.com/css2?family=Averia+Sans+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chiron+GoRound+TC:wght@200..900&display=swap');
+
+
+body {
+    display: block;
+    width: 100vw;
+    overflow-x: hidden;
+    background-color: #fff5e8;
+}
+
+main {
+    top: 0px;
+}
+
+#navbar {
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+
+    & .menu {
+        font-weight: 600;
+        display: flex;
+        padding: 15px 100px;
+        margin-top: 10px;
+
+        & a {
+            padding: 15px 50px;
+            transition: .25s;
+
+            &:hover {
+                color: var(--secondary-2);
+            }
+        }
+
+        & h2 {
+            line-height: 1.2;
+            text-align: center;
+        }
+
+        & .account {
+            margin-left: 30px;
+            rder-radius: var(--radius-full);
+            background-color: var(--secondary-2);
+            transition: .2s;
+
+            & h2 {
+                color: var(--light);
+            }
+
+            &:hover {
+                background-color: var(--secondary-1);
+            }
+        }
+    }
+}
+
+/* 共用區 */
+section {
+    display: flex;
+    flex-direction: column;
+    /* 主軸：垂直 */
+    justify-content: center;
+    /* 主軸(垂直)置中 */
+    align-items: center;
+    /* 副軸(水平)置中 */
+    height: 105vh;
+    gap: 30px;
+    /* 子元素共用間距 */
+}
+
+.title {
+    text-align: center;
+    line-height: 1.2;
+    width: max-content;
+    display: flex;
+    flex-direction: column;
+
+    .title>div {
+        overflow: hidden;
+    }
+
+    &>div>p {
+        width: max-content;
+        white-space: nowrap;
+        line-height: 117%;
+    }
+
+    &>div {
+        animation-delay: 0;
+        overflow: hidden;
+    }
+
+    &>div:nth-child(2)>h3 {
+        animation-delay: 0.05s;
+    }
+
+    .slide-up {
+        animation: slide-up 0.85s cubic-bezier(0.65, 0, 0.35, 1) both;
+    }
+
+    & h2 {
+        font-size: var(--font-xxl);
+        font-family: "Averia Sans Libre", sans-serif;
+        color: var(--secondary-2);
+    }
+
+    & h3 {
+        font-size: var(--font-md);
+        font-weight: 600;
+        color: var(--charcoal);
+    }
+}
+
+
+/* 標題區 */
+#pettips {
+    & .title {
+        width: 70vw;
+        display: flex;
+        text-align: start;
+    }
+
+    & .hashtag-list {
+        display: flex;
+
+
+        & .hashtag {
+            color: var(--secondary-2);
+            border: 1.5px var(--secondary-2) solid;
+            border-radius: 99px;
+
+            padding: 5px 20px;
+            margin: 50px 10px 20px 0px;
+            background-color: transparent;
+            transition: 0.25s;
+
+            &:hover {
+                cursor: pointer;
+                color: var(--light);
+                background-color: var(--secondary-2);
+            }
+
+        }
+    }
+
+    & .search {
+        display: flex;
+
+        & input {
+            padding: 10px 20px;
+            border: 1.5px var(--grey) solid;
+            border-radius: var(--radius-full);
+            height: 40px;
+            width: 70%;
+        }
+
+        & img {
+            margin-top: -5px;
+        }
+    }
+}
+
+/* 列表區 */
+.container {
+    width: 70vw;
+    ;
+
+    .card-row {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+    }
+}
+
+
+
+/* css btn */
+.btn-main {
+    /* position: relative; */
+    /* outline: none; */
+    /* text-decoration: none; */
+    border-radius: 99px;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    /* text-transform: uppercase; 強制英文字母大寫 */
+    height: 60px;
+    width: 210px;
+    /* opacity: 1;透明度 */
+    background-color: var(--secondary-2);
+    border: 2px solid var(--secondary-2);
+    margin: 40px auto 0;
+    /* 上(20)  左右(auto)  下(0) */
+    transition: 0.35s;
+}
+
+.btn-main span {
+    color: var(--light);
+    font-size: var(--font-sm);
+    /* font-weight: 500; */
+    letter-spacing: 1rem;
+    padding-left: 1rem;
+    /* 平衡字距的空間 */
+}
+
+.btn-main:hover {
+    animation: rotate 0.7s ease-in-out both;
+    background-color: var(--secondary-1);
+    border: 2px solid var(--secondary-1);
+    transform: rotate(30deg);
+    /* 無用語法。因為both：不抓keyframes重疊屬性，不會套用 */
+}
+
+.btn-main:hover span {
+    animation: storm 0.7s 0.1s ease-in-out both;
+    /* animation-delay: 0.06s; */
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg)
+            /*  translate3d(0, 0, 0) */
+        ;
+    }
+
+    25% {
+        transform: rotate(3deg)
+            /*  translate3d(0, 0, 0) */
+        ;
+    }
+
+    50% {
+        transform: rotate(-3deg)
+            /*  translate3d(0, 0, 0) */
+        ;
+    }
+
+    75% {
+        transform: rotate(1deg)
+            /*  translate3d(0, 0, 0) */
+        ;
+    }
+
+    100% {
+        transform: rotate(0deg)
+            /*  translate3d(0, 0, 0) */
+        ;
+    }
+}
+
+@keyframes storm {
+    0% {
+        transform: translateX(0)
+            /*  translateZ(0) */
+        ;
+    }
+
+    25% {
+        transform: translateX(4px)
+            /*  translateZ(0) */
+        ;
+    }
+
+    50% {
+        transform: translateX(-3px)
+            /*  translateZ(0) */
+        ;
+    }
+
+    75% {
+        transform: translateX(2px)
+            /*  translateZ(0) */
+        ;
+    }
+
+    100% {
+        transform: translateX(0)
+            /*  translateZ(0) */
+        ;
+    }
+}
+
+/* 頁尾區 */
+
+footer {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: var(--secondary-2);
+    padding: 8rem 8rem 3rem 20rem;
+
+    & figure {
+        margin-top: 80px;
+    }
+
+    & .pet-friends {
+        position: absolute;
+        top: -9rem;
+    }
+
+    & .footer-navigation {
+        font-weight: 600;
+        padding: 20px 100px;
+        margin-top: 10px;
+
+        & li {
+            color: var(--light);
+            padding: 20px 20px;
+        }
+
+        & .information {
+            display: flex;
+
+            & .menu-1 {
+                display: flex;
+
+                & h2 {
+                    line-height: 2;
+                }
+
+                & h3 {
+                    font-weight: 400;
+                    letter-spacing: 1px;
+                }
+            }
+
+            & .wrapper {
+                display: inline-flex;
+                margin-top: 20PX;
+
+                & .icon {
+                    position: relative;
+                    background: #7fe8a2;
+                    border-radius: 50%;
+                    padding: 15px;
+                    margin: 10px;
+                    width: 50px;
+                    height: 50px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+                    cursor: pointer;
+                    transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+                    & .tooltip {
+                        position: absolute;
+                        top: 0;
+                        font-size: 14px;
+                        background: #ffffff;
+                        color: #ffffff;
+                        padding: 5px 8px;
+                        border-radius: 5px;
+                        box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+                        opacity: 0;
+                        pointer-events: none;
+                        transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+                    }
+
+                    & .tooltip::before {
+                        position: absolute;
+                        height: 8px;
+                        width: 8px;
+                        background: #ffffff;
+                        bottom: -3px;
+                        left: 50%;
+                        transform: translate(-50%) rotate(45deg);
+                        transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+                    }
+                }
+
+                & .wrapper {
+                    background-image: url(../image/icon-fb.svg);
+                }
+
+                & .icon-ig {
+                    background-image: url(../image/icon-ig.svg);
+                }
+
+                & .icon-mail {
+                    background-image: url(../image/icon-mail.svg);
+                }
+
+
+                & .icon:hover .tooltip {
+                    top: -45px;
+                    opacity: 1;
+                    visibility: visible;
+                    pointer-events: auto;
+                }
+
+                & .icon:hover span,
+                .icon:hover .tooltip {
+                    text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+                }
+
+                & .facebook:hover,
+                .facebook:hover .tooltip,
+                .facebook:hover .tooltip::before {
+                    background: #1877F2;
+                    color: #ffffff;
+                }
+
+                & .mail:hover,
+                .mail:hover .tooltip,
+                .mail:hover .tooltip::before {
+                    background: #f2921d;
+                    color: #ffffff;
+                }
+
+                & .instagram:hover,
+                & .instagram:hover .tooltip,
+                & .instagram:hover .tooltip::before {
+                    background: #E4405F;
+                    color: #ffffff;
+                }
+
+            }
+
+
+        }
+
+
+    }
+
+    & .menu-2 {
+        display: flex;
+
+        & h2 {
+            line-height: 1.2;
+            text-align: center;
+        }
+
+        & a {
+            color: var(--light);
+            transition: .25s;
+
+            &:hover {
+                color: var(--bg-2);
+            }
+        }
+    }
+
+    & small {
+        color: var(--light);
+        align-self: flex-end;
+    }
+}
+
+
+/* =========================================
+Banner 首圖區修正
+========================================= */
+
+/* 1. 設定天空背景與高度 */
+.banner {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    /* 強制滿版高度 */
+    background-color: #FFF9E6;
+    /* 關鍵！改成米黃色天空，原本是綠色會看不見草 */
+    overflow: hidden;
+    /* 切掉超出螢幕的圖片 */
+    padding-top: 100px;
+    /* 避開上方導覽列 */
+    display: block;
+    /* 確保不是 flex 排版影響定位 */
+}
+
+/* 2. 文字層設定 (讓字浮在最上面) */
+.hero-text-layer {
+    position: relative;
+    z-index: 100;
+    /* 確保文字在最上層 */
+    text-align: center;
+    margin-top: 5vh;
+    /* 調整文字垂直位置 */
+}
+
+.hero-text-layer h1 {
+    color: #2E7D32;
+    /* 深綠色文字 */
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+.hero-text-layer p {
+    color: #558B2F;
+    font-size: 1.2rem;
+}
+
+/* 3. 場景素材定位容器 */
+.park-assets {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    /* 讓滑鼠穿透圖片，不會擋到點擊 */
+}
+
+/* 4. 所有圖片的共通設定 */
+.park-assets img {
+    position: absolute;
+    display: block;
+}
+
+/* --- 層次 1: 樹木 (最遠，稍微被草擋住) --- */
+/* 左邊深色樹 */
+.deco-tree-d1 {
+    left: 5%;
+    bottom: 450px;
+    width: 120px;
+    z-index: 99;
+}
+
+/* 右邊深色樹 */
+.deco-tree-d2 {
+    right: 5%;
+    bottom: 440px;
+    width: 130px;
+    z-index: 99;
+}
+
+/* 淺色樹木群 */
+.deco-tree-l1 {
+    left: 10%;
+    bottom: 420px;
+    width: 90px;
+    z-index: 99;
+}
+
+.deco-tree-l2 {
+    left: 30%;
+    bottom: 510px;
+    width: 60px;
+    z-index: 99;
+}
+
+.deco-tree-l3 {
+    right: 25%;
+    bottom: 500px;
+    width: 65px;
+    z-index: 99;
+}
+
+/* --- 層次 2: 後方草地 (最遠的小山丘) --- */
+.grass {
+    /* 對應 hero-back-grass.png */
+    width: 100%;
+    bottom: 80px;
+    /* 往上提一點 */
+    left: 0;
+    z-index: 3;
+    /* 蓋住樹根 */
+    transform: scale(1.1);
+    /* 稍微放大避免邊緣穿幫 */
+}
+
+/* --- 層次 3: 拱門 (種在後方草地上) --- */
+.arch-orange {
+    left: 12%;
+    bottom: 350px;
+    width: 160px;
+    z-index: 99;
+}
+
+.arch-yellow {
+    right: 15%;
+    bottom: 350px;
+    width: 150px;
+    z-index: 99;
+}
+
+/* --- 層次 4: 中間草地 (主要的大草皮) --- */
+.grass-imgM {
+    /* 對應 hero-mid-grass.png */
+    width: 120%;
+    /* 寬一點製造弧度 */
+    left: -10%;
+    /* 往左移一點置中 */
+    bottom: -300px;
+    z-index: 5;
+    /* 蓋住後方草地與拱門底部 */
+}
+
+/* --- 層次 5: 前景花草 (最近，左右兩邊) --- */
+.grass-imgL {
+    /* 左邊有花的草 */
+    right: 0;
+    bottom: -50px;
+    /* 稍微藏一點底 */
+    width: 35%;
+    /* 控制大小 */
+    min-width: 300px;
+    z-index: 10;
+}
+
+.grass-imgR {
+    /* 右邊的草 */
+    left: -20px;
+    bottom: -1200px;
+    width: 110%;
+    min-width: 350px;
+    z-index: 10;
+}
+
+/* --- 層次 6: 白色波浪 (最前面，負責銜接下一區) --- */
+.park-assets .path-W {
+    width: 130%;
+    bottom: -1px;
+    /* 消除縫隙 */
+    z-index: 1;
+    left: 0;
+}
+
+/* =========================================
+品牌特色區 (Main Feature) 修正
+   ========================================= */
+
+#mainfeature {
+    position: relative;
+    width: 100%;
+    min-height: 80vh;
+    /* 不要寫死 105vh，讓內容決定高度 */
+    background-color: #ffffff;
+    /* 確保背景是白色的 */
+    padding-top: 5rem;
+    /* 上方留白，避免貼太近 */
+    padding-bottom: 10rem;
+    /* 下方留白，給波浪空間 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    /* 確保在 Banner 下方但在背景之上 */
+}
+
+/* 內容容器：左右排版核心 */
+.content-wrapper {
+    display: flex;
+    /* 啟動 Flexbox */
+    justify-content: space-between;
+    /* 左右分散 */
+    align-items: center;
+    /* 垂直置中 */
+    max-width: 1200px;
+    /* 限制最大寬度 */
+    width: 90%;
+    /* RWD 寬度 */
+    margin: 0 auto;
+    position: relative;
+    z-index: 5;
+}
+
+/* --- 左側文字設定 --- */
+.text-group {
+    flex: 1;
+    /* 佔用 1 等份寬度 */
+    padding-right: 50px;
+    /* 跟右邊圖片保持距離 */
+}
+
+.main-title h2 {
+    color: var(--secondary-2);
+    /* 綠色標題 */
+    font-size: 2.5rem;
+    font-weight: bold;
+    line-height: 1.4;
+    margin-bottom: 10px;
+}
+
+.desc-content h3 {
+    font-size: 1.1rem;
+    color: #555;
+    /* 深灰色內文 */
+    font-weight: normal;
+    line-height: 1.8;
+    margin-bottom: 15px;
+    text-align: justify;
+    /* 左右對齊看起來比較整齊 */
+}
+
+.desc-content .highlight {
+    color: var(--secondary-2);
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/* --- 右側插畫設定 --- */
+.image-group {
+    flex: 1;
+    /* 佔用 1 等份寬度 */
+    position: relative;
+    display: flex;
+    justify-content: center;
+    height: 400px;
+    /* 給予固定高度讓圖片定位 */
+}
+
+.image-group .playdog {
+    position: absolute;
+    width: 350px;
+    /* 調整人與狗的大小 */
+    z-index: 2;
+    bottom: 0;
+    /* 站在底部 */
+    right: 20px;
+}
+
+.image-group .deco-branch {
+    position: absolute;
+    width: 150px;
+    bottom: -20px;
+    /* 稍微低一點 */
+    left: 20px;
+    /* 在人的左後方 */
+    z-index: 1;
+}
+
+/* --- 底部黃色波浪設定 --- */
+.wave-bottom {
+    position: absolute;
+    bottom: -600px;
+    /* 貼齊底部，負值消除縫隙 */
+    left: -180px;
+    width: 100vw;
+    line-height: 0;
+    /* 消除圖片底部的預設間隙 */
+    z-index: 1;
+}
+
+.wave-bottom img {
+    width: 120%;
+    height: -100px;
+    display: block;
+}
+
+/* =========================================
+商品專區 (Product) 修正
+   ========================================= */
+.product {
+    background-color: var(--primary-yellow, #FFC107);
+    /* 確保跟波浪顏色一樣 */
+    /* 修正重點：加大 padding-top */
+    /* 原本可能只有 4rem，因為上面有黃色波浪蓋下來，我們要預留空間 */
+    padding-top: 15vw;
+    /* 使用 vw 讓它隨螢幕寬度自動調整，約 150px-200px */
+    padding-bottom: 5rem;
+    position: relative;
+    z-index: 1;
+    /* 確保背景層級正確 */
+    margin-top: -2px;
+    /* 消除與上方白區塊的縫隙 */
+}
+
+
+
+
+
+
+
+
+/* --- RWD 手機版調整 --- */
+@media (max-width: 900px) {
+    .content-wrapper {
+        flex-direction: column;
+        /* 變成垂直排列 */
+    }
+
+    .text-group {
+        padding-right: 0;
+        margin-bottom: 3rem;
+        text-align: center;
+        /* 手機版文字居中 */
+    }
+
+    .image-group {
+        width: 100%;
+        height: 300px;
+    }
+
+    .image-group .playdog {
+        width: 250px;
+        right: 50%;
+        transform: translateX(50%);
+        /* 圖片居中 */
+    }
+
+    .path-y {}
+}
+
+/* =========================================
+   APP 下載區塊 (Dark Section)
+   ========================================= */
+.app {
+    background-color: var(--bg-1);
+    /* 深灰色背景 (根據截圖吸色) */
+    position: relative;
+    padding-top: 5rem;
+    padding-bottom: 0;
+    /* 底部不留白，讓綠色波浪貼底 */
+    overflow: hidden;
+    /* 防止鉛筆或動物跑出畫面 */
+    min-height: 800px;
+    /* 給予足夠高度 */
+    display: block;
+    /* 確保 block 排版 */
+}
+
+.app-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* 垂直置中 */
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 10;
+    padding: 0 5%;
+    height: 100%;
+}
+
+/* --- 左側視覺區 (手機+動物) --- */
+.app-visuals {
+    flex: 1;
+    position: relative;
+    height: 600px;
+    /* 設定高度以容納絕對定位的物件 */
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    /* 讓手機靠下對齊 */
+}
+
+/* 手機 (最重要，層級最高) */
+.app-phone {
+    position: relative;
+    z-index: 20;
+    /* 比綠色地板高 (如果要手機壓在綠地上) */
+    /* 根據截圖，手機是浮在綠地前面的 */
+    width: 280px;
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.5));
+    /* 增加立體感陰影 */
+    margin-bottom: -50px;
+    /* 讓手機稍微往下插進綠色區域 */
+}
+
+/* 動物們 (層級較低，被綠色地板遮住) */
+.deco-cat {
+    position: absolute;
+    left: -20px;
+    bottom: 80px;
+    /* 調整高度，讓它看起來站在綠地上 */
+    width: 150px;
+    z-index: 1;
+    /* 比綠色地板低 */
+    transform: rotate(-10deg);
+}
+
+.deco-dog {
+    position: absolute;
+    right: 0px;
+    bottom: 60px;
+    width: 180px;
+    z-index: 1;
+    /* 比綠色地板低 */
+}
+
+/* --- 右側資訊區 --- */
+.app-info {
+    flex: 1;
+    position: relative;
+    color: #fff;
+    padding-left: 5rem;
+    padding-bottom: 5rem;
+}
+
+/* 大鉛筆裝飾 */
+.deco-pencil {
+    position: absolute;
+    top: 180px;
+    right: -200px;
+    width: 250px;
+    z-index: 0;
+    opacity: 0.9;
+}
+
+.app-logo-group h2 {
+    font-size: 3rem;
+    color: #4CAF50;
+    /* Logo 綠色 */
+    font-weight: bold;
+    margin-bottom: 2rem;
+    position: relative;
+    /* 讓它浮在鉛筆上面 */
+}
+
+.app-description p {
+    font-size: 1rem;
+    color: var(--dark);
+    /* 淺灰色文字 */
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    text-align: justify;
+    max-width: 500px;
+}
+
+/* 按鈕群組 */
+.app-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 3rem;
+    flex-wrap: wrap;
+}
+
+.btn-store,
+.btn-outline {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 0.9rem;
+}
+
+.btn-store {
+    background-color: #fff;
+    color: #333;
+    border: none;
+}
+
+.btn-store:hover {
+    background-color: #f0f0f0;
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    background-color: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+}
+
+.btn-outline:hover {
+    background-color: var(--bg-1);
+}
+
+.icon {
+    margin-right: 8px;
+    font-size: 1.2rem;
+}
+
+/* --- 底部綠色遮罩層 (關鍵！) --- */
+.green-floor-mask {
+    position: absolute;
+    bottom: -160px;
+    left: 0;
+    width: 100%;
+    z-index: 5;
+    /* 關鍵層級：高於動物(1)，低於手機(20) */
+    pointer-events: none;
+}
+
+.path-green {
+    width: 100%;
+    display: block;
+    margin-bottom: -1px;
+    /* 消除縫隙 */
+    /* 視需要可以調整高度 */
+}
+
+.green-fill {
+    background-color: #4CAF50;
+    /* 必須跟 path-g.jpg 的綠色一致 */
+    /* 如果 path-g.jpg 是 #5AB269 之類的，請用滴管吸取顏色 */
+    /* 暫時用 var(--primary-green) 或吸取圖片色 */
+    background-color: #55B876;
+    /* 這是 path-g.jpg 大概的顏色 */
+    height: 50px;
+    /* 延伸到底部的高度 */
+    width: 100%;
+}
+
+/* --- RWD 手機版調整 --- */
+@media (max-width: 900px) {
+    .app-container {
+        flex-direction: column-reverse;
+        /* 手機版把手機圖放下面，文字放上面 */
+        padding-top: 3rem;
+    }
+
+    .app-visuals {
+        width: 100%;
+        height: 400px;
+        margin-top: 2rem;
+    }
+
+    .app-phone {
+        width: 200px;
+    }
+
+    .deco-cat {
+        left: 0;
+        bottom: 50px;
+        width: 100px;
+    }
+
+    .deco-dog {
+        right: 0;
+        bottom: 40px;
+        width: 120px;
+    }
+
+    .app-info {
+        padding-left: 0;
+        text-align: center;
+        padding-bottom: 0;
+    }
+
+    .app-description p {
+        margin: 0 auto 1.5rem auto;
+    }
+
+    .app-buttons {
+        justify-content: center;
+    }
+
+    .deco-pencil {
+        right: 0;
+        top: -40px;
+        width: 120px;
+    }
+}
+
+/* =========================================
+   關於我們 (About Us) 修正
+   ========================================= */
+   #aboutus {
+    position: relative;
+    background-color: #fff; /* 確保背景是白的 */
+    padding-top: 5rem;
+    padding-bottom: 8rem;   /* 下方留白給草叢空間，避免文字被草擋住 */
+    min-height: 60vh;
+    text-align: center;
+    overflow: hidden;       /* 確保草不會跑出去 */
+}
+
+/* 標題樣式微調 */
+#aboutus .title h2 {
+    color: var(--secondary-2);
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+#aboutus .title h3 {
+    color: #558B2F; /* 副標題用深綠色 */
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 3rem;
+}
+
+/* 內文排版 */
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 2;
+    color: #555;
+    position: relative;
+    z-index: 10; /* 文字層級要比草高嗎？通常草是裝飾，可以蓋一點文字或在文字下，這裡設高一點比較保險 */
+}
+
+.about-content p {
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+/* 草叢裝飾定位 */
+.about-deco {
+    position: absolute;
+    bottom: 0;       /* 絕對貼底 */
+    right: 15%;      /* 靠右 15%，你可以根據視覺調整這個數值 */
+    z-index: 1;      /* 在最底層裝飾 */
+    pointer-events: none;
+}
+
+.twograss {
+    width: 250px;    /* 調整草叢大小 */
+    display: block;
+    margin-bottom: -5px; /* 稍微往下推一點，確保與 Footer 無縫接軌 */
+}
+
+/* RWD 調整 */
+@media (max-width: 768px) {
+    .about-deco {
+        right: 50%;
+        transform: translateX(50%); /* 手機版改為置中 */
+        bottom: -10px;
+    }
+    
+    .twograss {
+        width: 200px;
+    }
+}
+
+.path-W11 {
+    width: 100vw;
+    overflow: hidden;
+    position: relative;
+}
+.product .path-W {
+    position: absolute;
+    width: 100%;
+    bottom:-100px;
+    z-index: 999;
+
+    /* 消除縫隙 */
+    /* 視需要可以調整高度 */
+}
