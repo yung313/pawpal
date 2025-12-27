@@ -3,13 +3,8 @@ body {
 }
 
 #contact {
-
-    position: relative;
-    /* overflow: clip; */
-    /* gap: 15px; */
-
-
     & .title {
+        width: 70vw;
         position: relative;
 
         & h2,
@@ -17,19 +12,21 @@ body {
             color: var(--light);
         }
 
-        & span {
+        & .p-absolute {
             position: absolute;
             z-index: -1;
+        }
 
-            & .deco-right {
-                top: 0px;
-                left: 0px;
-            }
-
-            & .deco-left {
-                top: 0px;
-                right: 0px;
-            }
+        & .deco-right {
+            transform: scale(70%);
+            top: -45px;
+            left: 0px;
+        }
+        
+        & .deco-left {
+            transform: scale(70%) rotate(-10deg);
+            top: -130px;
+            right: 0px;
         }
     }
 
@@ -64,7 +61,7 @@ body {
                 transform: translateY(-2px);
             }
 
-            & .form {
+            & .contactForm {
                 position: relative;
                 display: -webkit-box;
                 display: -ms-flexbox;
@@ -132,6 +129,7 @@ body {
         }
 
         & .link_btn {
+            margin-left: auto;
             margin-top: 20px;
             position: relative;
             display: flex;
@@ -162,8 +160,6 @@ body {
             }
 
             & span {
-                justify-content: center;
-                align-items: center;
                 font-size: var(--font-sm);
                 color: #fff;
                 font-weight: 500;

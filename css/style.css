@@ -2,8 +2,21 @@
 /* 編碼一定要在第一行 */
 @import url(./reset.css);
 @import url(./var.css);
-@import url('https://fonts.googleapis.com/css2?family=Averia+Sans+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Chiron+GoRound+TC:wght@200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Averia+Sans+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Chiron+GoRound+TC:wght@200..900&family=Quicksand:wght@300..700&display=swap');
+
+/* --- 自定義捲軸 --- */
+::-webkit-scrollbar {
+    width: 7px;
+}
+
+::-webkit-scrollbar-track {
+    opacity: 0;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--bg-2);
+    border-radius: 20px;
+}
 
 #navbar {
     position: fixed;
@@ -116,7 +129,7 @@ section {
 
     & h2 {
         font-size: var(--font-xxl);
-        font-family: "Averia Sans Libre", sans-serif;
+        font-family: "Averia Sans Libre","Chiron GoRound TC", sans-serif;
         color: var(--secondary-2);
     }
 
@@ -126,10 +139,6 @@ section {
         color: var(--charcoal);
     }
 }
-
-/* .box-sizing{
-    box-sizing: border-box;
-} */
 
 main {
     position: relative;

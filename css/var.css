@@ -16,6 +16,16 @@
     --secondary-2: #60BE89;
     --secondary-3: #e5ffec;
 
+    /* 文章顏色 */
+    --color-bg: #FFFFFF;
+    --color-yellow: #FFD46E;
+    --color-green: #60BE89;
+    --color-orange: #FF9250;
+    --color-dark: #5A4A42;
+    --color-red: #de7f7f;
+    --color-red-bg: #fef2f2;
+    --color-red-border: #f87171;
+
     /* 圓角 */
     --radius-full: 99px;
     --radius-card: 20px;
