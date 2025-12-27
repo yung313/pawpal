@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_圖層_2" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1366 190.97">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff8f0;
+        stroke-width: 0px;
+      }
+    </style>
+  </defs>
+  <g id="_波浪" data-name="波浪">
+    <path class="cls-1" d="m683,0c-170.75,0-170.75,72-341.5,72S170.75,0,0,0v190.97h1366V0c-170.75,0-170.75,72-341.5,72S853.75,0,683,0Z"/>
+  </g>
+</svg>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_圖層_2" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2732.33 200">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+        stroke-width: 0px;
+      }
+    </style>
+  </defs>
+  <g id="_底圖" data-name="底圖">
+    <g>
+      <path class="cls-1" d="m1366.33,200h1366V0c-683,0-683,200-1366,200Z"/>
+      <path class="cls-1" d="m0,200h1366C683,200,683,0,0,0v200Z"/>
+    </g>
+  </g>
+</svg>
